@@ -1,6 +1,5 @@
 import os
 import streamlit as st
-from streamlit_chat import message
 from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate, ChatPromptTemplate
@@ -120,5 +119,3 @@ if prompt1 := st.chat_input(placeholder="How can i help you?"):
         response = chain(prompt)['response']
         st.session_state.messages.append({"role": "assistant", "content": response})
         st.write(response)
-
-
